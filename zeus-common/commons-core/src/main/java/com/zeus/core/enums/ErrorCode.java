@@ -1,7 +1,7 @@
 package com.zeus.core.enums;
 
 public interface ErrorCode {
-    String getCode();
+    Integer getCode();
 
     String getDesc();
 }
