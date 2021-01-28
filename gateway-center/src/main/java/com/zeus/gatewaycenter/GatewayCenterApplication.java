@@ -1,6 +1,10 @@
 package com.zeus.gatewaycenter;
 
+import com.alibaba.fastjson.JSONObject;
+import com.user.provider.api.UserInfoProvider;
+import com.user.provider.model.UserInfoDTO;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
@@ -30,6 +34,9 @@ public class GatewayCenterApplication {
         @Autowired
         LoadBalancerClient loadBalancerClient;
 
+        @DubboReference
+        private UserInfoProvider userInfoProvider;
+
         @GetMapping("/test")
         public String test() {
             // 通过spring cloud common中的负载均衡接口选取服务提供节点实现接口调用
@@ -38,6 +45,8 @@ public class GatewayCenterApplication {
             String url = serviceInstance.getUri() + "/hello?name=" + "didi";
             RestTemplate restTemplate = new RestTemplate();
 //            String result = restTemplate.getForObject(url, String.class);
+            UserInfoDTO userInfoDTO = userInfoProvider.getUserInfo("test");
+            System.out.println("结果：" + JSONObject.toJSONString(userInfoDTO));
             return "Invoke : " + url + ", return : " + testValue;
         }
     }
