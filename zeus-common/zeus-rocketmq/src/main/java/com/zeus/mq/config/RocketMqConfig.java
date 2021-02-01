@@ -13,6 +13,7 @@ public class RocketMqConfig {
         RocketMqProducerTemplate rocketMqProducerTemplate = new RocketMqProducerTemplate();
         ProducerConfig producerConfig = new ProducerConfig();
         producerConfig.setProducerGroup("DEFAULT_GROUP");
+        rocketMqProducerTemplate.setNamesrvAddr("192.168.1.121:9876");
         rocketMqProducerTemplate.setProducerConfig(producerConfig);
         return rocketMqProducerTemplate;
     }

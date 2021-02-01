@@ -5,7 +5,7 @@ import com.zeus.rocketmq.annotation.RocketMQListener;
 import org.springframework.stereotype.Component;
 
 @Component
-@RocketListeners(topic = "MY_TOPIC")
+@RocketListeners(topic = "MY_TOPIC1")
 public class MyListener {
 
     @RocketMQListener(messageClass = String.class,tag = "TAG_1")

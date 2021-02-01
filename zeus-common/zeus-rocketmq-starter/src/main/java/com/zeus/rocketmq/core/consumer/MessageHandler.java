@@ -32,8 +32,7 @@ public class MessageHandler {
                 if (log.isDebugEnabled()) {
                     log.debug("开始消费，msg={}", msg);
                 }
-                listener.onMessage(JSON.parseObject(new String(body, "UTF-8"),
-                        listener.getConsumerConfig().getMessageClass()), messageContext);
+                listener.onMessage(new String(body, "UTF-8"), messageContext);
                 if (log.isDebugEnabled()) {
                     log.debug("消费完成");
                 }

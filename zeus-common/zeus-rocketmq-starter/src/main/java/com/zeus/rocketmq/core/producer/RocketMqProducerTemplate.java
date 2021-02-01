@@ -92,12 +92,12 @@ public class RocketMqProducerTemplate<M> implements MqProducer<M> {
 
         @Override
         public void onSuccess(SendResult sendResult) {
-
+            logger.info("send success");
         }
 
         @Override
         public void onException(Throwable e) {
-
+            logger.error("send error", e);
         }
     }
 }
