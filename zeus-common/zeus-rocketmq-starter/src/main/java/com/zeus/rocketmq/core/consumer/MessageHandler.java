@@ -13,8 +13,6 @@ import java.util.List;
 
 /**
  * 消息处理器
- *
- * @author jolly
  */
 @Slf4j
 public class MessageHandler {

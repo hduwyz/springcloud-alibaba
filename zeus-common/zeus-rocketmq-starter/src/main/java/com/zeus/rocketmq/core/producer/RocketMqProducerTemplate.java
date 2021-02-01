@@ -14,13 +14,9 @@ import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/**
- * @author jolly
- */
 public class RocketMqProducerTemplate<M> implements MqProducer<M> {
 
     private static final Logger logger = LoggerFactory.getLogger(RocketMqProducerTemplate.class);
-
 
     private String namesrvAddr;
 
