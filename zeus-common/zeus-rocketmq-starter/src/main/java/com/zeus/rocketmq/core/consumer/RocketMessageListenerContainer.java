@@ -20,9 +20,6 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-/**
- * @author jolly
- */
 public class RocketMessageListenerContainer implements InitializingBean, DisposableBean, BeanNameAware,
         SmartLifecycle, ApplicationContextAware, ConsumerOperator {
 

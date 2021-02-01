@@ -5,12 +5,12 @@ import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
 import org.apache.rocketmq.common.consumer.ConsumeFromWhere;
 
 public class MessageConsumer {
-    private static DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("ConsumerGroupName");
+    private static DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("DEFAULT_GROUP");
     private static int initialState = 0;
 
     public static DefaultMQPushConsumer getDefaultMQPushConsumer(){
         if(consumer == null){
-            consumer = new DefaultMQPushConsumer("ConsumerGroupName");
+            consumer = new DefaultMQPushConsumer("DEFAULT_GROUP");
         }
 
         if(initialState == 0){

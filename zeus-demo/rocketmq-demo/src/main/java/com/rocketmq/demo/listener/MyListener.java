@@ -2,7 +2,9 @@ package com.rocketmq.demo.listener;
 
 import com.zeus.rocketmq.annotation.RocketListeners;
 import com.zeus.rocketmq.annotation.RocketMQListener;
+import org.springframework.stereotype.Component;
 
+@Component
 @RocketListeners(topic = "MY_TOPIC")
 public class MyListener {
 

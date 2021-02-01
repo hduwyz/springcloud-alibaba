@@ -20,9 +20,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * @author jolly
- */
+
 public class SimpleListenerFactory implements InitializingBean, ApplicationContextAware {
 
 

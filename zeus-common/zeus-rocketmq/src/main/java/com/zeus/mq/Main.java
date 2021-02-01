@@ -40,6 +40,7 @@ public class Main {
                             "TAG_1",                         // tag
                             "OrderID00"+i,                  // key
                             ("Hello MetaQ"+i + "TAG_1").getBytes());  // body
+                    producer.setVipChannelEnabled(false);
                     SendResult sendResult = producer.send(msg);
                     log.info("sendResult:{}", sendResult);
                 }else{
@@ -76,7 +77,7 @@ public class Main {
 
         // 订阅主体
         try {
-            consumer.subscribe("TopicTest1", "*");
+            consumer.subscribe("MY_TOPIC", "*");
 
             consumer.registerMessageListener(new MessageListenerConcurrently() {
 
@@ -90,16 +91,16 @@ public class Main {
 
                     MessageExt msg = msgs.get(0);
 
-                    if (msg.getTopic().equals("TopicTest1")) {
+                    if (msg.getTopic().equals("MY_TOPIC")) {
                         // 运行TopicTest1的消费逻辑
-                        if (msg.getTags() != null && msg.getTags().equals("TagA")) {
+                        if (msg.getTags() != null && msg.getTags().equals("TAG_1")) {
                             // 运行TagA的消费
                             log.info("MsgBody:{}",new String(msg.getBody()));
                         } else if (msg.getTags() != null
-                                && msg.getTags().equals("TagC")) {
+                                && msg.getTags().equals("TAG_2")) {
                             // 运行TagC的消费
                         } else if (msg.getTags() != null
-                                && msg.getTags().equals("TagD")) {
+                                && msg.getTags().equals("TAG_3")) {
                             // 运行TagD的消费
                         }
                     } else if (msg.getTopic().equals("TopicTest2")) {
