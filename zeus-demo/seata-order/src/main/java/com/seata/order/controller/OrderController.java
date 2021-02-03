@@ -28,6 +28,7 @@ public class OrderController {
         order.setMoney(1);
         order.setCommodityCode(UUID.randomUUID().toString());
         orderMapper.insert(order);
+        int count = 1/0;
         return "创建订单成功,订单号：" + order.getId();
     }
 }
