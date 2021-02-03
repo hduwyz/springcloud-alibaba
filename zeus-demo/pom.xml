@@ -16,6 +16,8 @@
 
     <modules>
         <module>rocketmq-demo</module>
+        <module>seata-user</module>
+        <module>seata-order</module>
     </modules>
 
     <properties>
