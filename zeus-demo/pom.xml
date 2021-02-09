@@ -18,6 +18,7 @@
         <module>rocketmq-demo</module>
         <module>seata-user</module>
         <module>seata-order</module>
+        <module>websocket-demo</module>
     </modules>
 
     <properties>

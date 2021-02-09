@@ -1,0 +1,32 @@
+dubbo:
+    application:
+        id: ${spring.application.name}
+        name: ${spring.application.name}
+    cloud:
+        subscribed-services: ${spring.application.name}
+    protocol:
+        name: dubbo
+        port: -1
+    registry:
+        address: nacos://192.168.1.121:8848?backup=192.168.1.202:8848,192.168.1.70:8848
+        simplified: true
+    scan:
+        base-packages: com.zeus
+logging:
+    level:
+        com:
+            alibaba:
+                nacos:
+                    client:
+                        config:
+                            impl: warn
+server:
+    port: 8070
+spring:
+    application:
+        name: gateway
+    cloud:
+        nacos:
+            discovery:
+                namespace: public
+                server-addr: 192.168.1.121:8848,192.168.1.202:8848,192.168.1.70:8848
