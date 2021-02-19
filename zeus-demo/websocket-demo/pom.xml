@@ -35,5 +35,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-websocket</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.zeus</groupId>
+            <version>0.0.1-SNAPSHOT</version>
+            <artifactId>zeus-commons-starter</artifactId>
+        </dependency>
     </dependencies>
 </project>

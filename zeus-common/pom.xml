@@ -18,6 +18,7 @@
         <module>commons-core</module>
         <module>zeus-rocketmq</module>
         <module>zeus-rocketmq-starter</module>
+        <module>zeus-commons-starter</module>
     </modules>
 
 </project>
