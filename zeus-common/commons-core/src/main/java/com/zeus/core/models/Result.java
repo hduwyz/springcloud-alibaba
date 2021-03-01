@@ -2,12 +2,14 @@ package com.zeus.core.models;
 
 import com.zeus.core.enums.CodeEnum;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
 @NoArgsConstructor
 @AllArgsConstructor
+@Data
 public class Result<T> implements Serializable {
 
     private T data;

@@ -19,6 +19,7 @@
         <module>seata-user</module>
         <module>seata-order</module>
         <module>websocket-demo</module>
+        <module>spring-security-demo</module>
     </modules>
 
     <properties>
