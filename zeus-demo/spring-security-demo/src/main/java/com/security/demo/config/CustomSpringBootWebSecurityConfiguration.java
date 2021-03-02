@@ -47,10 +47,12 @@ public class CustomSpringBootWebSecurityConfiguration {
                     .successForwardUrl("/login/success")
                     .failureForwardUrl("/login/failure")
                     .and()
+                    .logout().addLogoutHandler(new CustomLogoutHandler())
+                    .logoutSuccessHandler(new CustomLogoutSuccessHandler());
                     //添加该过滤器来实现登录方式的改变
-                    .addFilterBefore(new PreLoginFilter("/process", new ArrayList<>()), UsernamePasswordAuthenticationFilter.class)
+//                    .addFilterBefore(new PreLoginFilter("/process", new ArrayList<>()), UsernamePasswordAuthenticationFilter.class)
                     //验证码登录过滤器配置
-                    .addFilterBefore(captchaAuthenticationFilter, PreLoginFilter.class);
+//                    .addFilterBefore(captchaAuthenticationFilter, PreLoginFilter.class);
         }
     }
 }
